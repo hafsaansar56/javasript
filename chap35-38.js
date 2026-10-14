@@ -62,3 +62,71 @@ function calculateHypotenuse(base, perpendicular) {
 var result = calculateHypotenuse(3, 4)
 console.log("Hypotenuse is: " + result)
 
+function palindrome(str){
+var reverse = ""
+for(var i= str.length-1; i>=0; i--){
+    reverse =reverse+str[i]
+}
+console.log(str, reverse)
+if(reverse===str){
+    console.log(str+" is a palindrome word")
+}else{
+    console.log(str+" is not a palindrome word")
+}
+}
+var string = prompt("Enter a word").toLowerCase()
+palindrome(string)
+
+function upperCaseFirstLetter(str) {
+    let result = ''
+    let capitalizeNext = true
+    for (var i = 0; i < str.length; i++) {
+        var char = str[i]
+        if (char === ' ') {
+            capitalizeNext = true
+            result += char;
+        } else if (capitalizeNext) {
+            result += char.toUpperCase()
+            capitalizeNext = false
+        } else {
+            result += char
+        }
+    }
+    return result;
+}
+console.log(upperCaseFirstLetter('the quick brown fox'))
+
+function findLongestWord(string) {
+    var words = string.split(' ')
+    var longestWord = ''
+    for (var word of words) {
+        if (word.length > longestWord.length) {
+            longestWord = word
+        }
+    }
+    return longestWord
+}
+var exampleString = 'Web Development Tutorial'
+console.log(findLongestWord(exampleString))
+
+function countLetter(str, letter) {
+    var count = 0
+        for (var i = 0; i < str.length; i++) {
+        if (str[i] === letter) {
+            count++
+        }
+    }
+    return count
+}
+console.log(countLetter('JSResourceS.com', 'o'))
+
+function calcCircumference(radius) {
+    var circumference = 2 * Math.PI * radius;
+    console.log(`The circumference is ${circumference}`)
+}
+function calcArea(radius) {
+    var area = Math.PI * radius * radius
+    console.log(`The area is ${area}`)
+}
+calcCircumference(5)
+calcArea(5)
